@@ -1,0 +1,1349 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Красный диплом АлтГТУ</title>
+<meta name="description" content="Проверка: идёшь ли ты на диплом с отличием. АлтГТУ, 09.03.01, набор 2024.">
+<meta name="theme-color" content="#7B1526">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F3F3F0; --card: #FFFFFF; --ink: #1D1E22; --muted: #666A72; --rule: #E2E2DE; --field: #F7F7F5;
+  --red: #7B1526; --red-2: #62101E; --gold: #D9B76B; --navy: #1E2B4A; --navy-2: #172240;
+  --g5: #2E7A4D; --g4: #2C6AAE; --g3: #B7791F; --g2: #B42318; --pend: #B5B8BE;
+  --g5-bg: #E4F3EA; --g4-bg: #E3EEF9; --g3-bg: #FBF0DC; --g2-bg: #FBE4E2;
+  --focus: #2C6AAE;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131416; --card: #1C1D21; --ink: #ECECE9; --muted: #9B9EA5; --rule: #2C2E33; --field: #24262B;
+    --g5: #5DBB85; --g4: #6AA6E8; --g3: #E3A84A; --g2: #F07468; --pend: #5A5D64;
+    --g5-bg: #1C3326; --g4-bg: #1B2B3F; --g3-bg: #3A2E18; --g2-bg: #3C1E1C; --focus: #6AA6E8;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 16px/1.5 "PT Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 16px 16px 64px; }
+h2 { font: 700 21px/1.25 "PT Serif", Georgia, serif; margin: 0 0 4px; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* ---------- обложка ---------- */
+.cover {
+  position: relative; border-radius: 16px; padding: 28px 22px 22px; color: #F5EEDD;
+  background: var(--red);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.25), inset 0 -40px 80px rgba(0,0,0,.18), 0 10px 30px rgba(60,10,20,.25);
+  transition: background-color .5s ease;
+}
+.cover::before {
+  content: ""; position: absolute; inset: 9px; border-radius: 10px; pointer-events: none;
+  border: 1px solid rgba(217,183,107,.45);
+}
+.cover.navy { background: var(--navy); box-shadow: inset 0 0 0 1px rgba(0,0,0,.25), inset 0 -40px 80px rgba(0,0,0,.2), 0 10px 30px rgba(20,30,60,.25); }
+.cover .uni { font-size: 13px; color: rgba(245,238,221,.72); text-align: center; }
+.cover .word {
+  font: 700 clamp(36px, 11vw, 54px)/1 "PT Serif", Georgia, serif; letter-spacing: .14em; text-align: center;
+  color: var(--gold); margin-top: 14px; text-shadow: 0 1px 0 rgba(0,0,0,.45), 0 -1px 0 rgba(255,235,180,.12);
+}
+.cover .kind {
+  font: 400 18px/1.2 "PT Serif", Georgia, serif; text-align: center; color: var(--gold); margin-top: 8px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.4);
+}
+.cover .verdict { margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(217,183,107,.3); }
+.cover .verdict b { display: block; font-size: 20px; line-height: 1.25; color: #fff; }
+.cover .verdict p { margin-top: 6px; font-size: 15px; color: rgba(245,238,221,.85); }
+.grid { margin-top: 18px; display: grid; gap: 6px; }
+.grid .row { display: flex; align-items: center; gap: 6px; }
+.grid .lbl { width: 46px; flex: none; font-size: 12px; color: rgba(245,238,221,.6); }
+.cell { width: 22px; height: 22px; border-radius: 5px; flex: none; border: 1.5px solid rgba(217,183,107,.55); }
+.cell.c5 { background: var(--gold); border-color: var(--gold); }
+.cell.c4 { background: rgba(245,238,221,.55); border-color: transparent; }
+.cell.c3, .cell.c2 { background: #F2836F; border-color: #F2836F; }
+.cell.pre { border-style: dashed; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; font-size: 12px; color: rgba(245,238,221,.7); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .cell { width: 12px; height: 12px; border-radius: 3px; }
+
+/* ---------- цифры ---------- */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: 14px; }
+.stat { background: var(--card); padding: 12px 10px; }
+.stat .n { font: 700 26px/1 "PT Serif", Georgia, serif; }
+.stat .n small { font: 400 15px "PT Sans", sans-serif; color: var(--muted); }
+.stat .t { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+.budget { display: flex; gap: 3px; margin-top: 8px; }
+.budget i { flex: 1; height: 6px; border-radius: 3px; background: var(--rule); }
+.budget i.used { background: var(--g4); }
+.budget i.over { background: var(--g2); }
+
+/* ---------- блоки ---------- */
+section.block { margin-top: 30px; }
+section.block > header { margin-bottom: 12px; }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; }
+
+.tabs { display: flex; gap: 4px; padding: 4px; background: var(--field); border: 1px solid var(--rule); border-radius: 10px; margin-bottom: 12px; }
+.tabs button { flex: 1; border: 0; background: transparent; padding: 9px; border-radius: 7px; cursor: pointer; color: var(--muted); }
+.tabs button[aria-selected="true"] { background: var(--card); color: var(--ink); font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+
+.drop {
+  display: block; border: 1.5px dashed var(--pend); border-radius: 10px; padding: 22px 14px; text-align: center; cursor: pointer;
+  background: var(--field);
+}
+.drop:hover, .drop.over { border-color: var(--red); }
+.drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.drop b { display: block; }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.thumbs img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; border: 1px solid var(--rule); }
+
+textarea {
+  width: 100%; min-height: 170px; resize: vertical; padding: 12px; border-radius: 8px; border: 1px solid var(--rule);
+  background: var(--field); font-size: 15px; line-height: 1.45;
+}
+.ctrl { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+.ctrl label { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+select, input[type=number], input[type=text] {
+  border: 1px solid var(--rule); background: var(--field); border-radius: 8px; padding: 8px 10px; font-size: 16px; min-height: 40px;
+}
+.btn {
+  border: 0; border-radius: 8px; padding: 10px 16px; min-height: 42px; cursor: pointer; font-weight: 700;
+  background: var(--red); color: #fff;
+}
+.btn:hover { background: var(--red-2); }
+.btn[disabled] { opacity: .5; cursor: default; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--rule); font-weight: 400; }
+.btn.ghost:hover { background: var(--field); }
+.ml-auto { margin-left: auto; }
+
+.progress { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.bar { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; margin-top: 6px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--red); transition: width .2s; }
+
+/* предпросмотр */
+.pv { margin-top: 16px; border-top: 1px solid var(--rule); padding-top: 14px; }
+.pv-row { display: grid; grid-template-columns: 24px 1fr auto; gap: 4px 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.pv-row input[type=checkbox] { width: 20px; height: 20px; accent-color: var(--red); }
+.pv-name { font-weight: 700; line-height: 1.3; }
+.pv-meta { grid-column: 2 / 4; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 14px; color: var(--muted); }
+.pv-meta select { min-height: 34px; padding: 4px 8px; font-size: 14px; }
+.pv-val { display: flex; align-items: center; gap: 6px; }
+.pv-val input { width: 64px; min-height: 36px; padding: 4px 8px; text-align: center; }
+.warn { color: var(--g3); }
+.pv-skip { font-size: 14px; color: var(--muted); margin-top: 10px; }
+
+.chip { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 26px; padding: 0 8px; border-radius: 999px; font-weight: 700; font-size: 14px; background: var(--field); color: var(--muted); }
+.chip.g5 { background: var(--g5-bg); color: var(--g5); }
+.chip.g4 { background: var(--g4-bg); color: var(--g4); }
+.chip.g3, .chip.g2 { background: var(--g3-bg); color: var(--g3); }
+.chip.g2 { background: var(--g2-bg); color: var(--g2); }
+
+/* что дальше */
+.todo { list-style: none; margin: 0; padding: 0; }
+.todo li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.todo li:last-child { border-bottom: 0; }
+.todo .f { font-size: 14px; color: var(--muted); white-space: nowrap; }
+.todo .hard { color: var(--g2); }
+.sub { font-weight: 700; margin: 14px 0 4px; }
+.sub:first-child { margin-top: 0; }
+
+/* зачётка */
+.sem { margin-top: 12px; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.sem > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 10px; padding: 13px 14px; }
+.sem > summary::-webkit-details-marker { display: none; }
+.sem > summary b { font: 700 18px "PT Serif", Georgia, serif; }
+.sem > summary .done { margin-left: auto; font-size: 14px; color: var(--muted); }
+.sem > summary::after { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); margin-left: 4px; position: relative; top: -2px; transition: transform .15s; }
+.sem[open] > summary::after { transform: rotate(-135deg); top: 2px; }
+.srow { display: grid; grid-template-columns: 1fr 74px 40px; gap: 10px; align-items: center; padding: 10px 14px; border-top: 1px solid var(--rule); }
+.srow .nm { line-height: 1.3; }
+.srow .fm { font-size: 13px; color: var(--muted); display: block; margin-top: 2px; }
+.srow .fm.k { color: var(--g2); }
+.srow input { width: 74px; text-align: center; }
+.zach { padding: 10px 14px 14px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+
+.settings { margin-top: 30px; }
+.settings > summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+.set-grid { display: grid; gap: 14px; margin-top: 10px; }
+.set-grid .line { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.set-grid input[type=number] { width: 84px; }
+.radio { display: flex; gap: 8px; align-items: flex-start; }
+.radio input { margin-top: 5px; accent-color: var(--red); }
+
+.rules { margin-top: 30px; font-size: 14px; color: var(--muted); }
+.rules p + p { margin-top: 8px; }
+
+.toast { position: fixed; left: 50%; bottom: 18px; transform: translate(-50%, 20px); opacity: 0; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 8px; font-size: 15px; transition: .25s; pointer-events: none; z-index: 10; max-width: calc(100% - 32px); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (max-width: 420px) {
+  .stat .n { font-size: 22px; }
+  .cell { width: 20px; height: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover" id="cover">
+    <p class="uni">АлтГТУ им. И.И. Ползунова, 09.03.01</p>
+    <div class="word">ДИПЛОМ</div>
+    <div class="kind" id="kind">бакалавра с отличием</div>
+    <div class="verdict" role="status" aria-live="polite">
+      <b id="vTitle">Добавьте оценки</b>
+      <p id="vText"></p>
+    </div>
+    <div class="grid" id="grid" aria-label="34 оценки в приложении к диплому по семестрам"></div>
+    <div class="legend">
+      <span><i class="cell c5"></i>отлично</span>
+      <span><i class="cell c4"></i>хорошо</span>
+      <span><i class="cell c3"></i>удовл.</span>
+      <span><i class="cell"></i>впереди</span>
+      <span><i class="cell pre"></i>предмет ещё идёт</span>
+    </div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <section class="block" id="importBlock">
+    <header>
+      <h2>Добавить оценки</h2>
+      <p class="muted small">Скриншоты сессий из личного кабинета или текст. Перед добавлением всё можно проверить и поправить.</p>
+    </header>
+    <div class="card">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="photo">Скриншоты</button>
+        <button role="tab" aria-selected="false" data-tab="text">Текст</button>
+      </div>
+
+      <div data-pane="photo">
+        <label class="drop" id="drop">
+          <input type="file" id="files" accept="image/*" multiple>
+          <b>Выбрать скриншоты</b>
+          <span class="muted small">Можно сразу все семестры. Лучше скриншот, а не фото экрана.</span>
+        </label>
+        <div class="thumbs" id="thumbs"></div>
+        <div class="ctrl">
+          <label>Семестр <select id="imgSem"></select></label>
+          <button class="btn ml-auto" id="ocrBtn" disabled>Распознать</button>
+        </div>
+        <div class="progress" id="ocrProg" hidden><span id="ocrMsg"></span><div class="bar"><i id="ocrBar"></i></div></div>
+        <details id="ocrRaw" hidden style="margin-top:12px">
+          <summary class="small muted" style="cursor:pointer">Распознанный текст — можно исправить</summary>
+          <div id="ocrTexts"></div>
+          <div class="ctrl"><button class="btn ghost" id="reparse">Разобрать заново</button></div>
+        </details>
+      </div>
+
+      <div data-pane="text" hidden>
+        <textarea id="txt" placeholder="3 семестр&#10;Операционные системы экзамен 76&#10;Интегралы и дифференциальные уравнения экзамен 64&#10;Базы данных курсовая 79&#10;матан 5"></textarea>
+        <p class="muted small" style="margin-top:6px">Одна строка — один предмет. Можно баллы (76) или оценку (5). Строка «N семестр» задаёт семестр для строк ниже. Можно вставить текст, скопированный со страницы сессии в ЛК.</p>
+        <div class="ctrl">
+          <label>Семестр <select id="txtSem"></select></label>
+          <button class="btn ml-auto" id="txtBtn">Разобрать</button>
+        </div>
+      </div>
+
+      <div class="pv" id="pv" hidden></div>
+    </div>
+  </section>
+
+  <section class="block" id="nextBlock" hidden>
+    <header><h2>Что дальше</h2></header>
+    <div class="card" id="next"></div>
+  </section>
+
+  <section class="block">
+    <header>
+      <h2>Зачётка</h2>
+      <p class="muted small">Только то, что попадает в приложение к диплому. Впишите баллы или оценку — расчёт обновится сразу.</p>
+    </header>
+    <div id="book"></div>
+  </section>
+
+  <details class="settings">
+    <summary>Настройки</summary>
+    <div class="set-grid card">
+      <div>
+        <p class="small"><b>Какая оценка идёт в диплом</b> по предметам из нескольких семестров (иностранный, программирование приложений, разработка компонентов)</p>
+        <div class="radio" style="margin-top:8px"><input type="radio" name="rule" id="ruleLast" value="last"><label for="ruleLast" class="small">Последняя (так обычно; пока последний экзамен не сдан, предмет считается «впереди»)</label></div>
+        <div class="radio" style="margin-top:6px"><input type="radio" name="rule" id="ruleBest" value="best"><label for="ruleBest" class="small">Лучшая из всех экзаменов</label></div>
+        <p class="muted small" style="margin-top:6px">Точное правило АлтГТУ стоит уточнить в деканате.</p>
+      </div>
+      <div>
+        <p class="small"><b>Шкала баллов</b> (по цветам в личном кабинете)</p>
+        <div class="line small" style="margin-top:8px">
+          <label>«отлично» от <input type="number" id="th5" min="1" max="100"></label>
+          <label>«хорошо» от <input type="number" id="th4" min="1" max="100"></label>
+          <label>«удовл.» от <input type="number" id="th3" min="1" max="100"></label>
+        </div>
+      </div>
+      <div class="line small">
+        <label>Год поступления <input type="number" id="adm" min="2015" max="2035"></label>
+        <span class="muted">нужен, чтобы понять семестр по заголовку «2025-2026 уч. год, 2-я сес.»</span>
+      </div>
+      <div class="line">
+        <button class="btn ghost" id="exportBtn">Скопировать оценки текстом</button>
+        <button class="btn ghost" id="resetBtn">Стереть все оценки</button>
+      </div>
+      <p class="muted small">Оценки хранятся только в этом браузере. Текст из кнопки «Скопировать» можно вставить во вкладку «Текст» на другом устройстве.</p>
+    </div>
+  </details>
+
+  <div class="rules">
+    <p><b>Условия диплома с отличием</b> (приказ Минобрнауки № 670): в приложении к диплому нет троек, ВКР защищена на «отлично», а «отлично» не меньше 75% от всех оценок. Обычные «зачтено» в процент не входят. По учебному плану набора 2024 это 34 оценки: нужно минимум 26 «отлично», значит «хорошо» можно не больше 8.</p>
+    <p>В АлтГТУ не позже чем за месяц до ГЭК можно пересдать на повышение до двух экзаменов — только если после этого выходит красный диплом. Курсовые и практики так не пересдаются.</p>
+    <p>Это неофициальный калькулятор. Если что-то расходится с зачёткой или деканатом, верьте им.</p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ===== Красный диплом АлтГТУ 09.03.01 — логика (без DOM) ===== */
+(function (root) {
+  "use strict";
+
+  // ---------- Дисциплины учебного плана ----------
+  // key, полное название, короткие псевдонимы (только точное совпадение слов),
+  // zach — семестры, где по предмету обычный зачёт (на красный не влияет)
+  const DISC = [
+    { key: "matan", name: "Математический анализ", alias: ["матан", "матанализ"] },
+    { key: "inf", name: "Информатика", alias: ["инфа"] },
+    { key: "prog", name: "Программирование", alias: [] },
+    { key: "nachert", name: "Начертательная геометрия", alias: ["начерталка", "начерт"] },
+    { key: "org", name: "Основы российской государственности", alias: ["орг", "основы рос государственности"] },
+    { key: "pp", name: "Программирование приложений", alias: ["пп", "прог приложений"] },
+    { key: "phys", name: "Физика", alias: ["физа"], zach: [3] },
+    { key: "integ", name: "Интегралы и дифференциальные уравнения", alias: ["интегралы", "диффуры", "интегралы и ду"] },
+    { key: "os", name: "Операционные системы", alias: ["ос"] },
+    { key: "lang", name: "Иностранный язык", alias: ["иняз", "английский", "английский язык", "ин яз"], zach: [1, 2, 4] },
+    { key: "bd", name: "Базы данных", alias: ["бд"] },
+    { key: "phil", name: "Философия", alias: [] },
+    { key: "electronics", name: "Электроника", alias: [] },
+    { key: "stat", name: "Основы статистической обработки экспериментальных данных", alias: ["статистика", "статобработка", "осоэд"] },
+    { key: "net", name: "Сети и телекоммуникации", alias: ["сети"] },
+    { key: "arch", name: "Проектирование архитектуры и программного обеспечения автоматизированных систем", alias: ["архитектура", "проектирование архитектуры", "паипоас"] },
+    { key: "mps", name: "Микропроцессорные системы", alias: ["мпс", "микропроцессоры"] },
+    { key: "sovr", name: "Современные технологии программирования", alias: ["стп"], zach: [5] },
+    { key: "web", name: "Основы WEB-технологий", alias: ["веб", "web", "основы веб технологий"] },
+    { key: "admin", name: "Администрирование и безопасность сетевых устройств и программного обеспечения автоматизированных систем", alias: ["администрирование"] },
+    { key: "epak", name: "Эксплуатация программно-аппаратных комплексов", alias: ["эпак"] },
+    { key: "mob", name: "Программирование мобильных устройств", alias: ["мобилки", "пму"] },
+    { key: "modif", name: "Модификация, сопровождение и документирование программно-технических систем", alias: ["модификация"] },
+    { key: "rkspp", name: "Разработка компонентов системных программных продуктов", alias: ["рксп", "рксп"], zach: [6] },
+    { key: "prac_expl", name: "Эксплуатационная практика", alias: [] },
+    { key: "prac_tech", name: "Технологическая (проектно-технологическая) практика", alias: ["технологическая практика", "проектно технологическая практика"] },
+    { key: "prac_pre", name: "Преддипломная практика", alias: ["преддипломная"] },
+    { key: "vkr", name: "Выпускная квалификационная работа", alias: ["вкр", "диплом", "защита вкр", "гиа"] },
+    // --- только зачёты / факультативы: распознаём, чтобы не спутать, и игнорируем
+    { key: "z_linal", name: "Линейная алгебра и теория матриц", zach: [1] },
+    { key: "z_hist", name: "История России", zach: [2] },
+    { key: "z_fk", name: "Физическая культура и спорт", zach: [2] },
+    { key: "z_angeom", name: "Аналитическая геометрия", zach: [2] },
+    { key: "z_graph", name: "Инженерная графика", zach: [2] },
+    { key: "z_struct", name: "Структуры данных", zach: [2] },
+    { key: "z_econ", name: "Экономика", zach: [3] },
+    { key: "z_elteh", name: "Электротехника", zach: [3] },
+    { key: "z_kult", name: "Культура речи и деловая коммуникация", zach: [3] },
+    { key: "z_sport", name: "Спортивное совершенствование", zach: [3, 4, 5, 6] },
+    { key: "z_fv", name: "Физическое воспитание", zach: [3, 4, 5, 6] },
+    { key: "z_prav", name: "Правоведение", zach: [4] },
+    { key: "z_proj", name: "Разработка и реализация проектов", zach: [4] },
+    { key: "z_sysan", name: "Системный анализ и принятие решений", zach: [4] },
+    { key: "z_bzh", name: "Безопасность жизнедеятельности", zach: [5] },
+    { key: "z_vt", name: "Вычислительная техника", zach: [5] },
+    { key: "z_ovp", name: "Основы военной подготовки", zach: [5] },
+    { key: "z_test", name: "Тестирование программного обеспечения автоматизированных систем", zach: [6] },
+    { key: "z_el1a", name: "Основы принятия решений в информационных системах", zach: [7] },
+    { key: "z_el1b", name: "Основы функционального программирования", zach: [7] },
+    { key: "z_el2a", name: "Проектирование аппаратного обеспечения автоматизированных систем", zach: [7] },
+    { key: "z_el2b", name: "Основы автоматизированного проектирования", zach: [7] },
+    { key: "z_zi", name: "Защита информации", zach: [8] },
+    { key: "z_iius", name: "Информационно-измерительные и управляющие системы", zach: [8] },
+    { key: "z_ibbd", name: "Информационная безопасность баз данных", zach: [8] },
+    { key: "z_razg", name: "Разговорный иностранный язык", zach: [5, 6] },
+    { key: "z_kit", name: "Китайский язык", zach: [5, 6] },
+    { key: "z_inzh", name: "Инженерное предпринимательство", zach: [3] },
+    { key: "z_psy", name: "Психология личности", zach: [4] },
+  ];
+  const DISC_BY_KEY = {};
+  DISC.forEach((d) => (DISC_BY_KEY[d.key] = d));
+
+  // ---------- Оценки, которые попадают в приложение к диплому ----------
+  // form: exam | kr | dz (зачёт с оценкой) | prac | vkr
+  // line — строка в приложении к диплому (несколько семестров → одна строка)
+  const SLOTS = [
+    { id: "matan", sem: 1, key: "matan", form: "exam" },
+    { id: "inf", sem: 1, key: "inf", form: "exam" },
+    { id: "prog", sem: 1, key: "prog", form: "exam" },
+    { id: "nachert", sem: 1, key: "nachert", form: "exam" },
+    { id: "org", sem: 1, key: "org", form: "dz" },
+
+    { id: "pp_kr", sem: 2, key: "pp", form: "kr" },
+    { id: "prac_expl", sem: 2, key: "prac_expl", form: "prac" },
+    { id: "phys", sem: 2, key: "phys", form: "exam" },
+    { id: "pp_ex2", sem: 2, key: "pp", form: "exam", line: "pp_ex" },
+
+    { id: "pp_ex3", sem: 3, key: "pp", form: "exam", line: "pp_ex" },
+    { id: "integ", sem: 3, key: "integ", form: "exam" },
+    { id: "os", sem: 3, key: "os", form: "exam" },
+    { id: "lang_ex3", sem: 3, key: "lang", form: "exam", line: "lang_ex" },
+
+    { id: "bd_kr", sem: 4, key: "bd", form: "kr" },
+    { id: "prac_tech4", sem: 4, key: "prac_tech", form: "prac", note: "учебная" },
+    { id: "bd", sem: 4, key: "bd", form: "exam" },
+    { id: "phil", sem: 4, key: "phil", form: "exam" },
+    { id: "electronics", sem: 4, key: "electronics", form: "exam" },
+    { id: "stat", sem: 4, key: "stat", form: "exam" },
+
+    { id: "lang_ex5", sem: 5, key: "lang", form: "exam", line: "lang_ex" },
+    { id: "net", sem: 5, key: "net", form: "exam" },
+    { id: "arch", sem: 5, key: "arch", form: "exam" },
+
+    { id: "mps_kr", sem: 6, key: "mps", form: "kr" },
+    { id: "web_kr", sem: 6, key: "web", form: "kr" },
+    { id: "prac_tech6", sem: 6, key: "prac_tech", form: "prac", note: "производственная" },
+    { id: "mps", sem: 6, key: "mps", form: "exam" },
+    { id: "sovr", sem: 6, key: "sovr", form: "exam" },
+    { id: "web", sem: 6, key: "web", form: "exam" },
+    { id: "admin", sem: 6, key: "admin", form: "exam" },
+
+    { id: "mob_kr", sem: 7, key: "mob", form: "kr" },
+    { id: "mob", sem: 7, key: "mob", form: "exam" },
+    { id: "epak", sem: 7, key: "epak", form: "exam" },
+    { id: "modif", sem: 7, key: "modif", form: "exam" },
+    { id: "rkspp7", sem: 7, key: "rkspp", form: "exam", line: "rkspp_ex" },
+
+    { id: "vkr", sem: 8, key: "vkr", form: "vkr" },
+    { id: "prac_pre", sem: 8, key: "prac_pre", form: "prac" },
+    { id: "rkspp8", sem: 8, key: "rkspp", form: "exam", line: "rkspp_ex" },
+  ];
+  SLOTS.forEach((s) => {
+    s.line = s.line || s.id;
+    s.name = DISC_BY_KEY[s.key].name;
+  });
+  const SLOT_BY_ID = {};
+  SLOTS.forEach((s) => (SLOT_BY_ID[s.id] = s));
+
+  // строки приложения к диплому
+  const LINES = [];
+  const LINE_BY_ID = {};
+  SLOTS.forEach((s) => {
+    let l = LINE_BY_ID[s.line];
+    if (!l) {
+      l = { id: s.line, key: s.key, name: s.name, form: s.form, slots: [] };
+      LINE_BY_ID[s.line] = l;
+      LINES.push(l);
+    }
+    l.slots.push(s);
+  });
+  LINES.forEach((l) => {
+    l.slots.sort((a, b) => a.sem - b.sem);
+    l.sem = l.slots[l.slots.length - 1].sem; // семестр итоговой оценки
+    const s0 = l.slots[0];
+    l.label = l.form === "kr" ? "Курсовая: " + l.name : s0.note ? l.name.replace(" (проектно-технологическая)", "") + " (" + s0.note + ")" : l.name;
+  });
+  LINES.sort((a, b) => a.sem - b.sem);
+
+  const TOTAL = LINES.length; // 34
+  const NEED_FIVES = Math.ceil(TOTAL * 0.75); // 26
+  const MAX_FOURS = TOTAL - NEED_FIVES; // 8
+  const RETAKES = 2;
+
+  const FORM_LABEL = { exam: "Экзамен", kr: "Курсовая", dz: "Зачёт с оценкой", prac: "Практика", vkr: "Защита ВКР", zach: "Зачёт" };
+  const RETAKABLE = { exam: true };
+
+  // ---------- Утилиты ----------
+  function plural(n, one, few, many) {
+    const m10 = n % 10, m100 = n % 100;
+    const w = m10 === 1 && m100 !== 11 ? one : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? few : many;
+    return n + " " + w;
+  }
+  // слова OCR с координатами → строки текста сверху вниз, слева направо
+  function wordsToText(words) {
+    const ws = words
+      .filter((w) => w && w.text && w.text.trim() && w.bbox)
+      .map((w) => ({ t: w.text.trim(), x: w.bbox.x0, yc: (w.bbox.y0 + w.bbox.y1) / 2, h: w.bbox.y1 - w.bbox.y0 }));
+    if (!ws.length) return "";
+    const hs = ws.map((w) => w.h).sort((a, b) => a - b);
+    const mh = hs[Math.floor(hs.length / 2)] || 10;
+    ws.sort((a, b) => a.yc - b.yc);
+    const lines = [];
+    for (const w of ws) {
+      const L = lines[lines.length - 1];
+      if (L && Math.abs(w.yc - L.yc) <= mh * 0.45) {
+        L.ws.push(w);
+        L.yc = L.ws.reduce((s, x) => s + x.yc, 0) / L.ws.length;
+      } else lines.push({ yc: w.yc, ws: [w] });
+    }
+    return lines.map((L) => L.ws.sort((a, b) => a.x - b.x).map((w) => w.t).join(" ")).join("\n");
+  }
+  function norm(s) {
+    return String(s || "")
+      .toLowerCase()
+      .replace(/ё/g, "е")
+      .replace(/([a-zа-я])(\d)/g, "$1 $2")
+      .replace(/(\d)([a-zа-я])/g, "$1 $2")
+      .replace(/[^a-zа-я0-9]+/g, " ")
+      .trim();
+  }
+  function lev(a, b) {
+    if (a === b) return 0;
+    const m = a.length, n = b.length;
+    if (!m) return n;
+    if (!n) return m;
+    let prev = new Array(n + 1), cur = new Array(n + 1);
+    for (let j = 0; j <= n; j++) prev[j] = j;
+    for (let i = 1; i <= m; i++) {
+      cur[0] = i;
+      const ca = a.charCodeAt(i - 1);
+      for (let j = 1; j <= n; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca === b.charCodeAt(j - 1) ? 0 : 1));
+      }
+      const t = prev; prev = cur; cur = t;
+    }
+    return prev[n];
+  }
+  function sim(a, b) {
+    const L = Math.max(a.length, b.length);
+    return L ? 1 - lev(a, b) / L : 1;
+  }
+
+  const DISC_N = DISC.map((d) => ({
+    d,
+    n: norm(d.name),
+    nw: norm(d.name).split(" "),
+    al: (d.alias || []).map((a) => norm(a).split(" ")),
+  }));
+
+  // лучшая дисциплина в строке слов; возвращает {d, start, end, score}
+  function matchDisc(words) {
+    let best = null;
+    const consider = (d, start, end, score) => {
+      if (!best || score > best.score + 1e-9 || (Math.abs(score - best.score) < 1e-9 && end - start > best.end - best.start)) {
+        best = { d, start, end, score };
+      }
+    };
+    for (const e of DISC_N) {
+      const k = e.nw.length;
+      // точные псевдонимы
+      for (const aw of e.al) {
+        for (let i = 0; i + aw.length <= words.length; i++) {
+          let ok = true;
+          for (let j = 0; j < aw.length; j++) if (words[i + j] !== aw[j]) { ok = false; break; }
+          if (ok) consider(e.d, i, i + aw.length, 0.95 + aw.join(" ").length * 1e-4);
+        }
+      }
+      // полное нечёткое совпадение
+      for (let w = Math.max(1, k - 1); w <= k + 1; w++) {
+        for (let i = 0; i + w <= words.length; i++) {
+          const cand = words.slice(i, i + w).join(" ");
+          if (Math.abs(cand.length - e.n.length) > Math.max(3, e.n.length * 0.25)) continue;
+          const s = sim(cand, e.n);
+          if (s >= 0.8) consider(e.d, i, i + w, s + e.n.length * 1e-5);
+        }
+      }
+      // начало длинного названия, перенесённого на следующую строку
+      if (e.n.length >= 22) {
+        for (let i = 0; i < words.length; i++) {
+          for (let j = words.length; j > i; j--) {
+            const cand = words.slice(i, j).join(" ");
+            if (cand.length < 16 || cand.length >= e.n.length - 2) continue;
+            const s = sim(cand, e.n.slice(0, cand.length));
+            if (s >= 0.86) consider(e.d, i, j, s * 0.97);
+            break; // берём самый длинный хвост от i
+          }
+        }
+      }
+    }
+    return best;
+  }
+
+  const FORM_WORDS = [
+    { seq: ["зачет", "с", "оценкой"], form: "dz" },
+    { seq: ["зачет", "с", "оц"], form: "dz" },
+    { seq: ["диф", "зачет"], form: "dz" },
+    { seq: ["дифзачет"], form: "dz" },
+    { seq: ["дз"], form: "dz" },
+    { seq: ["экзамен"], form: "exam" },
+    { seq: ["экз"], form: "exam" },
+    { seq: ["защита"], form: "kr" },
+    { seq: ["курсовая"], form: "kr" },
+    { seq: ["курсовой"], form: "kr" },
+    { seq: ["курсовая", "работа"], form: "kr" },
+    { seq: ["курсач"], form: "kr" },
+    { seq: ["кр"], form: "kr" },
+    { seq: ["зачет"], form: "zach" },
+    { seq: ["зачтено"], form: "zach" },
+    { seq: ["зач"], form: "zach" },
+  ];
+  const GRADE_WORDS = { "отлично": 5, "отл": 5, "хорошо": 4, "хор": 4, "удовлетворительно": 3, "удовл": 3, "уд": 3 };
+
+  function wordEq(w, target) {
+    if (w === target) return true;
+    if (target.length >= 5 && Math.abs(w.length - target.length) <= 1 && lev(w, target) <= 1) return true;
+    return false;
+  }
+  function findForm(words, used) {
+    let best = null;
+    for (let i = 0; i < words.length; i++) {
+      if (used[i]) continue;
+      for (const f of FORM_WORDS) {
+        let ok = true;
+        for (let j = 0; j < f.seq.length; j++) {
+          const w = words[i + j];
+          if (w === undefined || used[i + j] || !wordEq(w, f.seq[j])) { ok = false; break; }
+        }
+        if (ok && (!best || f.seq.length > best.len)) best = { form: f.form, idx: i, len: f.seq.length };
+      }
+      if (best) return best;
+    }
+    return null;
+  }
+
+  function semFromHeader(line, admission) {
+    const s = String(line).toLowerCase().replace(/ё/g, "е");
+    let m = s.match(/(20\d\d)\s*[-–—]\s*(20\d\d)[^\n]{0,25}?([12])\s*[-–—]?\s*[яй]?\s*сес/);
+    if (m) {
+      const sem = (parseInt(m[1], 10) - admission) * 2 + parseInt(m[3], 10);
+      if (sem >= 1 && sem <= 8) return sem;
+    }
+    m = s.match(/(?:^|[^\d])([1-8])\s*[-–—]?\s*(?:й|ой|ый)?\s*семестр/) || s.match(/семестр\s*[№#:]?\s*([1-8])(?!\d)/);
+    if (m) return parseInt(m[1], 10);
+    return null;
+  }
+
+  const SKIP_LINE = /(рейтинг|дисциплина\s*$|форма\s+проверки|^\s*балл\s*$|^\s*сессия\s*$)/i;
+
+  // разбор одной строки
+  function tokenizeLine(rawLine, admission) {
+    const line = rawLine.trim();
+    if (!line) return null;
+    const out = { raw: line, sem: null, disc: null, form: null, value: null, topic: false, nums: [] };
+    const hsem = semFromHeader(line, admission);
+    if (hsem && /(сес|семестр|уч)/i.test(line)) {
+      out.sem = hsem;
+      return out;
+    }
+    if (SKIP_LINE.test(line)) return out;
+    if (/^\s*тема\s*[:.]/i.test(line)) {
+      out.topic = true;
+      return out;
+    }
+    const words = norm(line).split(" ").filter(Boolean);
+    const used = new Array(words.length).fill(false);
+    const md = matchDisc(words);
+    if (md) {
+      out.disc = md.d;
+      for (let i = md.start; i < md.end; i++) used[i] = true;
+    }
+    const f = findForm(words, used);
+    if (f) {
+      out.form = f.form;
+      for (let i = f.idx; i < f.idx + f.len; i++) used[i] = true;
+    }
+    for (let i = 0; i < words.length; i++) {
+      if (used[i]) continue;
+      const w = words[i];
+      if (/^\d{1,3}$/.test(w)) {
+        const v = parseInt(w, 10);
+        if (v >= 2 && v <= 100) out.nums.push(v);
+      } else if (GRADE_WORDS[w] !== undefined) {
+        out.nums.push(GRADE_WORDS[w]);
+      }
+    }
+    if (out.nums.length) out.value = out.nums[out.nums.length - 1];
+    return out;
+  }
+
+  // ---------- Главный разбор ----------
+  // opts: { sem: число|null, admission: 2024 }
+  function parse(text, opts) {
+    opts = opts || {};
+    const admission = opts.admission || 2024;
+    const lines = String(text || "").split(/\r?\n|;/);
+    const sections = [{ sem: opts.sem || null, semSource: opts.sem ? "manual" : null, records: [], orphans: [] }];
+    let sec = sections[0];
+    let cur = null;
+    const finish = () => {
+      if (cur) sec.records.push(cur);
+      cur = null;
+    };
+    for (const raw of lines) {
+      const t = tokenizeLine(raw, admission);
+      if (!t) continue;
+      if (t.sem) {
+        finish();
+        if (sec.records.length || sec.orphans.length || sec.sem) {
+          sec = { sem: opts.sem || t.sem, semSource: opts.sem ? "manual" : "header", records: [], orphans: [] };
+          sections.push(sec);
+        } else {
+          sec.sem = opts.sem || t.sem;
+          sec.semSource = opts.sem ? "manual" : "header";
+        }
+        continue;
+      }
+      if (t.disc) {
+        finish();
+        cur = { disc: t.disc, form: t.form, value: t.value, topic: false, raw: [t.raw] };
+        continue;
+      }
+      if (t.topic) {
+        if (cur) cur.topic = true;
+        continue;
+      }
+      if (cur) {
+        if (t.form && !cur.form) cur.form = t.form;
+        if (t.value != null && cur.value == null) {
+          cur.value = t.value;
+          cur.raw.push(t.raw);
+        } else if (t.value != null) {
+          sec.orphans.push(t.raw);
+        }
+      } else if (t.value != null || t.form) {
+        sec.orphans.push(t.raw);
+      }
+    }
+    finish();
+
+    const records = [];
+    for (const s of sections) {
+      if (!s.sem) {
+        const v = voteSem(s.records);
+        if (v) { s.sem = v; s.semSource = "auto"; }
+      }
+      for (const r of s.records) records.push(resolve(r, s.sem, s.semSource));
+    }
+    const orphans = [].concat(...sections.map((s) => s.orphans));
+    return { records, orphans, sections: sections.map((s) => ({ sem: s.sem, semSource: s.semSource, count: s.records.length })) };
+  }
+
+  function candSems(r) {
+    const d = r.disc;
+    const form = effectiveForm(r);
+    const out = new Set();
+    SLOTS.forEach((s) => {
+      if (s.key === d.key && (!form || formMatch(s.form, form))) out.add(s.sem);
+    });
+    if (!form || form === "zach") (d.zach || []).forEach((x) => out.add(x));
+    return [...out];
+  }
+  function voteSem(recs) {
+    const votes = {};
+    recs.forEach((r) => {
+      const c = candSems(r);
+      c.forEach((x) => (votes[x] = (votes[x] || 0) + 1 / c.length));
+    });
+    let best = null, bv = 0, second = 0;
+    Object.keys(votes).forEach((k) => {
+      if (votes[k] > bv) { second = bv; bv = votes[k]; best = +k; } else if (votes[k] > second) second = votes[k];
+    });
+    return best && bv >= 1 && bv > second ? best : null;
+  }
+  function effectiveForm(r) {
+    if (r.form) return r.form;
+    if (r.topic) return "kr";
+    return null;
+  }
+  function formMatch(slotForm, f) {
+    if (slotForm === f) return true;
+    if (slotForm === "prac" && f === "dz") return true; // практика в ЛК — «зачёт с оценкой»
+    if (slotForm === "vkr") return true;
+    return false;
+  }
+
+  function resolve(r, sem, semSource) {
+    const d = r.disc;
+    const form = effectiveForm(r);
+    const base = {
+      key: d.key, name: d.name, form, value: r.value, sem, semSource,
+      raw: r.raw.join(" / "), slotId: null, options: [], status: "ok", reason: "",
+    };
+    const graded = SLOTS.filter((s) => s.key === d.key);
+    if (!graded.length) return Object.assign(base, { status: "zachet", reason: "зачёт — на красный не влияет" });
+    if (form === "zach") return Object.assign(base, { status: "zachet", reason: "зачёт — на красный не влияет" });
+    let c = graded.filter((s) => !form || formMatch(s.form, form));
+    if (sem) {
+      const inSem = c.filter((s) => s.sem === sem);
+      if (inSem.length) c = inSem;
+      else if (!form && (d.zach || []).includes(sem))
+        return Object.assign(base, { status: "zachet", reason: "в этом семестре по предмету зачёт" });
+      else if (c.length > 1) c = c; // семестр не совпал — пусть выберут
+    }
+    if (!form && c.length > 1) {
+      const ex = c.filter((s) => s.form === "exam");
+      if (ex.length === 1) c = ex.concat(c.filter((s) => s !== ex[0]));
+    }
+    if (base.value == null) Object.assign(base, { status: "noscore", reason: "не нашёл балл" });
+    base.options = c.map((s) => s.id);
+    if (!c.length) {
+      base.options = graded.map((s) => s.id);
+      base.slotId = base.options[0];
+      if (base.status === "ok") Object.assign(base, { status: "ambiguous", reason: "форма не совпала с планом — проверьте" });
+      return base;
+    }
+    base.slotId = c[0].id;
+    base.sem = c[0].sem;
+    if (c.length > 1 && base.status === "ok") {
+      base.status = "ambiguous";
+      base.reason = !form ? "не понял форму контроля" : "не понял семестр";
+    }
+    return base;
+  }
+
+  // ---------- Оценки ----------
+  function gradeOf(v, th) {
+    if (v == null || v === "" || isNaN(v)) return null;
+    v = Number(v);
+    if (v >= 2 && v <= 5 && Number.isInteger(v)) return v; // ввели оценку
+    if (v >= th.five) return 5;
+    if (v >= th.four) return 4;
+    if (v >= th.three) return 3;
+    return 2;
+  }
+
+  // state: { slots: { id: value } }, settings: { th:{five,four,three}, rule:'last'|'best' }
+  function compute(state, settings) {
+    const th = settings.th;
+    const rule = settings.rule || "last";
+    const lineRes = LINES.map((l) => {
+      const gs = l.slots.map((s) => ({ s, v: state.slots[s.id], g: gradeOf(state.slots[s.id], th) }));
+      const done = gs.filter((x) => x.g != null);
+      let final = null, prelim = null, fromSlot = null;
+      if (gs.length === 1) {
+        if (done.length) { final = done[0].g; fromSlot = done[0]; }
+      } else if (rule === "last") {
+        const last = gs[gs.length - 1];
+        if (last.g != null) { final = last.g; fromSlot = last; }
+        else if (done.length) { prelim = done[done.length - 1].g; fromSlot = done[done.length - 1]; }
+      } else {
+        if (done.length) {
+          const best = done.reduce((a, b) => (b.g > a.g || (b.g === a.g && (+b.v || 0) > (+a.v || 0)) ? b : a));
+          if (done.length === gs.length || best.g === 5) { final = best.g; fromSlot = best; }
+          else { prelim = best.g; fromSlot = best; }
+        }
+      }
+      const score = fromSlot && Number(fromSlot.v) > 5 ? Number(fromSlot.v) : null;
+      return { line: l, final, prelim, score };
+    });
+
+    const c = { 5: 0, 4: 0, 3: 0, 2: 0 };
+    let pending = 0;
+    lineRes.forEach((r) => (r.final != null ? c[r.final]++ : pending++));
+    const graded = TOTAL - pending;
+    const fours = c[4];
+    const bad = lineRes.filter((r) => r.final != null && r.final <= 3);
+    const badExam = bad.filter((r) => RETAKABLE[r.line.form]);
+    const badOther = bad.filter((r) => !RETAKABLE[r.line.form]);
+    const vkr = lineRes.find((r) => r.line.id === "vkr");
+    const foursExam = lineRes.filter((r) => r.final === 4 && RETAKABLE[r.line.form]);
+    const retakesLeft = RETAKES - badExam.length;
+    const foursAfterRetakes = fours - Math.max(0, Math.min(retakesLeft, foursExam.length));
+    const budget = MAX_FOURS - fours;
+
+    let status, title, text;
+    const blockers = [];
+    if (vkr.final != null && vkr.final < 5) blockers.push("ВКР защищена не на «отлично» — по закону это закрывает красный диплом.");
+    if (badOther.length) blockers.push("Тройка по " + badOther.map((r) => "«" + r.line.label + "»").join(", ") + ": это не экзамен, а пересдать на повышение в АлтГТУ можно только экзамены.");
+    if (badExam.length > RETAKES) blockers.push("Троек по экзаменам больше двух, а пересдать на повышение можно максимум 2 экзамена.");
+    if (!blockers.length && retakesLeft >= 0 && foursAfterRetakes > MAX_FOURS)
+      blockers.push("«Хорошо» уже " + fours + ", а даже с двумя пересдачами их останется больше " + MAX_FOURS + ".");
+
+    if (blockers.length) {
+      status = "no";
+      title = "Красный диплом уже не получится";
+      text = blockers.join(" ");
+    } else if (badExam.length || fours > MAX_FOURS) {
+      status = "retake";
+      title = "Красный возможен только через пересдачи";
+      const parts = [];
+      if (badExam.length) parts.push("тройку по " + badExam.map((r) => "«" + r.line.label + "»").join(", ") + " обязательно пересдать");
+      if (fours > MAX_FOURS) parts.push("«хорошо» уже " + fours + " при лимите " + MAX_FOURS + " — нужно поднять до «отлично» " + plural(fours - MAX_FOURS, "экзамен", "экзамена", "экзаменов"));
+      text = "Сейчас " + parts.join("; ") + ". Пересдача — не позже чем за месяц до ГЭК, максимум 2 экзамена. А всё, что осталось, — только на «отлично».";
+    } else if (graded === 0) {
+      status = "empty";
+      title = "Добавьте оценки";
+      text = "Вставьте текст или загрузите скриншоты сессий из личного кабинета — расчёт появится здесь.";
+    } else if (budget >= 4) {
+      status = "good";
+      title = "Идёшь на красный уверенно";
+      text = "Можно получить ещё " + budget + " «хорошо» на оставшиеся " + plural(pending, "оценку", "оценки", "оценок") + ", остальное — «отлично».";
+    } else if (budget >= 1) {
+      status = "ok";
+      title = "Идёшь на красный, но запас маленький";
+      text = "Можно получить ещё только " + budget + " «хорошо» на оставшиеся " + plural(pending, "оценку", "оценки", "оценок") + ". Плюс страховка: до 2 пересдач экзаменов перед ГЭК.";
+    } else {
+      status = "edge";
+      title = "На грани: дальше только «отлично»";
+      text = "Лимит «хорошо» исчерпан. Любая новая четвёрка — и спасти смогут только пересдачи (до 2 экзаменов перед ГЭК).";
+    }
+    if (status !== "no" && vkr.final == null && graded > 0) text += " ВКР — обязательно на «отлично».";
+
+    // кандидаты на пересдачу: экзамены с 4/3, ближе всего к «отлично»
+    const retakeCands = lineRes
+      .filter((r) => r.final != null && r.final < 5 && RETAKABLE[r.line.form])
+      .sort((a, b) => (a.final - b.final) || ((b.score || 0) - (a.score || 0)));
+
+    return {
+      lines: lineRes, counts: c, pending, graded, fours, budget, retakesLeft,
+      fivesNeeded: Math.max(0, NEED_FIVES - c[5]),
+      pct: graded ? Math.round((c[5] / graded) * 100) : null,
+      status, title, text, retakeCands,
+    };
+  }
+
+  const API = {
+    DISC, DISC_BY_KEY, SLOTS, SLOT_BY_ID, LINES, LINE_BY_ID, TOTAL, NEED_FIVES, MAX_FOURS, RETAKES,
+    FORM_LABEL, norm, sim, parse, compute, plural, wordsToText, gradeOf, semFromHeader, matchDisc, tokenizeLine,
+  };
+  if (typeof module !== "undefined" && module.exports) module.exports = API;
+  else root.RD = API;
+})(typeof window !== "undefined" ? window : this);
+
+</script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const KEY = "rd-altstu-0903-v1";
+  const DEF = { slots: {}, settings: { admission: 2024, th: { five: 75, four: 50, three: 25 }, rule: "last" } };
+
+  let S;
+  try { S = JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { S = null; }
+  if (!S || !S.slots) S = JSON.parse(JSON.stringify(DEF));
+  S.settings = Object.assign({}, DEF.settings, S.settings || {});
+  S.settings.th = Object.assign({}, DEF.settings.th, S.settings.th || {});
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+  const GRADE_WORD = { 5: "отл", 4: "хор", 3: "удовл", 2: "неуд" };
+  const FORM_SHORT = { exam: "Экзамен", kr: "Курсовая", dz: "Зачёт с оценкой", prac: "Практика, зачёт с оценкой", vkr: "Защита ВКР" };
+  const grade = (v) => RD.gradeOf(v, S.settings.th);
+  function chip(v) {
+    const g = grade(v);
+    if (g == null) return '<span class="chip">—</span>';
+    return '<span class="chip g' + g + '" title="' + GRADE_WORD[g] + '">' + g + "</span>";
+  }
+  function semYear(sem) {
+    const y = S.settings.admission + Math.floor((sem - 1) / 2);
+    return sem % 2 ? "осень " + y : "весна " + (y + 1);
+  }
+  function parseVal(s) {
+    s = String(s || "").trim().replace(",", ".");
+    if (!s) return null;
+    const v = Math.round(Number(s));
+    if (!isFinite(v) || v < 0 || v > 100) return undefined;
+    return v;
+  }
+  let toastT;
+  function toast(msg) {
+    const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2600);
+  }
+
+  // ---------- сводка ----------
+  function renderSummary() {
+    const r = RD.compute(S, S.settings);
+    const cover = $("#cover");
+    const navy = r.status === "no" || r.status === "retake";
+    cover.classList.toggle("navy", navy);
+    $("#kind").textContent = r.status === "no" ? "бакалавра" : r.status === "retake" ? "бакалавра (пока без отличия)" : "бакалавра с отличием";
+    $("#vTitle").textContent = r.title;
+    $("#vText").textContent = r.text;
+
+    // сетка 34 клеток
+    const bySem = {};
+    r.lines.forEach((x) => (bySem[x.line.sem] = bySem[x.line.sem] || []).push(x));
+    let html = "";
+    for (let sem = 1; sem <= 8; sem++) {
+      html += '<div class="row"><span class="lbl">' + sem + " сем.</span>";
+      (bySem[sem] || []).forEach((x) => {
+        const cls = x.final != null ? "c" + x.final : x.prelim != null ? "pre" : "";
+        const st = x.final != null ? GRADE_WORD[x.final] : x.prelim != null ? "пока " + GRADE_WORD[x.prelim] + ", итог позже" : "впереди";
+        html += '<i class="cell ' + cls + '" title="' + esc(x.line.label + ": " + st) + '"></i>';
+      });
+      html += "</div>";
+    }
+    $("#grid").innerHTML = html;
+
+    // цифры
+    let dots = "";
+    for (let i = 0; i < Math.max(RD.MAX_FOURS, r.fours); i++) dots += '<i class="' + (i < r.fours ? (i >= RD.MAX_FOURS ? "over" : "used") : "") + '"></i>';
+    $("#stats").innerHTML =
+      '<div class="stat"><div class="n">' + r.counts[5] + ' <small>/ ' + RD.NEED_FIVES + '</small></div><div class="t">«отлично», нужно ' + RD.NEED_FIVES + "</div></div>" +
+      '<div class="stat"><div class="n">' + r.fours + ' <small>/ ' + RD.MAX_FOURS + '</small></div><div class="t">«хорошо» из допустимых</div><div class="budget">' + dots + "</div></div>" +
+      '<div class="stat"><div class="n">' + r.pending + '</div><div class="t">' + RD.plural(r.pending, "оценка", "оценки", "оценок").replace(/^\d+ /, "") + " впереди" + (r.counts[3] + r.counts[2] ? ', троек: <b style="color:var(--g2)">' + (r.counts[3] + r.counts[2]) + "</b>" : "") + "</div></div>";
+
+    renderNext(r);
+    renderBookDone(r);
+  }
+
+  function renderNext(r) {
+    const blk = $("#nextBlock");
+    if (!r.graded || r.status === "no") { blk.hidden = true; return; }
+    blk.hidden = false;
+    let html = "";
+    const pend = r.lines.filter((x) => x.final == null);
+    if (pend.length) {
+      const sem = Math.min.apply(null, pend.map((x) => x.line.sem));
+      const items = pend.filter((x) => x.line.sem === sem);
+      html += '<p class="sub">Ближайший семестр с оценками в диплом — ' + sem + "-й. Нужны «отлично»:</p><ul class='todo'>";
+      items.forEach((x) => {
+        const hard = x.line.form !== "exam";
+        html += "<li><span>" + esc(x.line.label) + '</span><span class="f' + (hard ? " hard" : "") + '">' + (hard ? "пересдать нельзя" : FORM_SHORT[x.line.form]) + "</span></li>";
+      });
+      html += "</ul>";
+    }
+    const c = r.retakeCands.slice(0, 3);
+    if (c.length) {
+      html += '<p class="sub">Если понадобится пересдача (до 2 экзаменов перед ГЭК), ближе всего к «отлично»:</p><ul class="todo">';
+      c.forEach((x) => {
+        const need = x.score != null ? "не хватает " + (S.settings.th.five - x.score) + " б." : "сейчас " + GRADE_WORD[x.final];
+        html += "<li><span>" + esc(x.line.label) + (x.score != null ? ' <span class="muted small">' + x.score + " б.</span>" : "") + '</span><span class="f">' + need + "</span></li>";
+      });
+      html += "</ul>";
+    }
+    $("#next").innerHTML = html;
+  }
+
+  // ---------- зачётка ----------
+  function slotNote(s) {
+    const l = RD.LINE_BY_ID[s.line];
+    if (l.slots.length > 1) {
+      const last = l.slots[l.slots.length - 1];
+      return s === last ? "итоговый экзамен, идёт в диплом" : "промежуточный, итог — " + last.sem + " сем.";
+    }
+    return "";
+  }
+  function renderBook() {
+    let html = "";
+    const r = RD.compute(S, S.settings);
+    const pendingSem = Math.min.apply(null, r.lines.filter((x) => x.final == null).map((x) => x.line.sem).concat([9]));
+    for (let sem = 1; sem <= 8; sem++) {
+      const slots = RD.SLOTS.filter((s) => s.sem === sem);
+      const open = sem === pendingSem || sem === pendingSem - 1;
+      html += '<details class="sem" data-sem="' + sem + '"' + (open ? " open" : "") + "><summary><b>" + sem + ' семестр</b><span class="muted small">' + semYear(sem) + '</span><span class="done" data-done="' + sem + '"></span></summary>';
+      slots.forEach((s) => {
+        const l = RD.LINE_BY_ID[s.line];
+        const label = l.slots.length > 1 || s.form === "kr" ? s.name : l.label;
+        const note = slotNote(s);
+        const hard = s.form !== "exam";
+        const v = S.slots[s.id];
+        html += '<div class="srow"><div class="nm">' + esc(label) +
+          '<span class="fm' + (hard ? " k" : "") + '">' + FORM_SHORT[s.form] + (hard ? ", пересдать нельзя" : "") + (note ? ", " + note : "") + "</span></div>" +
+          '<input type="text" inputmode="numeric" maxlength="3" aria-label="' + esc(label + ", балл") + '" placeholder="балл" data-slot="' + s.id + '" value="' + (v != null ? v : "") + '">' +
+          '<span data-chip="' + s.id + '">' + chip(v) + "</span></div>";
+      });
+      const z = RD.DISC.filter((d) => (d.zach || []).includes(sem) && !RD.SLOTS.some((s) => s.key === d.key && s.sem === sem)).map((d) => d.name);
+      if (z.length) html += '<div class="zach">Зачёты, на красный не влияют: ' + esc(z.join("; ")) + "</div>";
+      html += "</details>";
+    }
+    $("#book").innerHTML = html;
+    renderBookDone(r);
+  }
+  function renderBookDone(r) {
+    for (let sem = 1; sem <= 8; sem++) {
+      const el = $('[data-done="' + sem + '"]');
+      if (!el) continue;
+      const slots = RD.SLOTS.filter((s) => s.sem === sem);
+      const n = slots.filter((s) => S.slots[s.id] != null).length;
+      el.textContent = n ? n + " из " + slots.length : "";
+    }
+  }
+  $("#book").addEventListener("input", (e) => {
+    const id = e.target.dataset.slot;
+    if (!id) return;
+    const v = parseVal(e.target.value);
+    if (v === undefined) return;
+    if (v == null) delete S.slots[id]; else S.slots[id] = v;
+    $('[data-chip="' + id + '"]').innerHTML = chip(v);
+    save(); renderSummary();
+  });
+
+  // ---------- семестр в выпадающих списках ----------
+  function fillSemSelect(sel) {
+    let o = '<option value="">определить сам</option>';
+    for (let i = 1; i <= 8; i++) o += '<option value="' + i + '">' + i + " (" + semYear(i) + ")</option>";
+    sel.innerHTML = o;
+  }
+
+  // ---------- вкладки ----------
+  $$(".tabs button").forEach((b) => b.addEventListener("click", () => {
+    $$(".tabs button").forEach((x) => x.setAttribute("aria-selected", x === b ? "true" : "false"));
+    $$("[data-pane]").forEach((p) => (p.hidden = p.dataset.pane !== b.dataset.tab));
+  }));
+
+  // ---------- предпросмотр импорта ----------
+  let PV = null; // { items: [...], skipped: [...], orphans: [...] }
+  function optLabel(id) {
+    const s = RD.SLOT_BY_ID[id];
+    return s.sem + " сем., " + FORM_SHORT[s.form].toLowerCase() + (s.note ? " (" + s.note + ")" : "");
+  }
+  function showPreview(results) {
+    const items = [], skipped = [], orphans = [];
+    results.forEach((res) => {
+      res.records.forEach((r) => {
+        if (r.status === "zachet") skipped.push(r.name);
+        else items.push(Object.assign({}, r, { on: r.value != null }));
+      });
+      orphans.push.apply(orphans, res.orphans);
+    });
+    // повторы одного слота: оставляем последний
+    const seen = {};
+    for (let i = items.length - 1; i >= 0; i--) {
+      const it = items[i];
+      if (it.slotId && it.status !== "ambiguous" && seen[it.slotId]) it.on = false;
+      if (it.slotId) seen[it.slotId] = true;
+    }
+    PV = { items, skipped, orphans };
+    renderPreview();
+    $("#pv").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  }
+  function renderPreview() {
+    const pv = $("#pv");
+    if (!PV) { pv.hidden = true; return; }
+    pv.hidden = false;
+    const { items, skipped, orphans } = PV;
+    let html = "";
+    if (!items.length) {
+      html += "<p><b>Оценок для диплома не нашёл.</b></p><p class='muted small' style='margin-top:4px'>" +
+        (skipped.length ? "Нашлись только зачёты — они на красный не влияют. " : "") +
+        "Проверьте распознанный текст или впишите оценки во вкладке «Текст».</p>";
+    } else {
+      html += "<p><b>Нашёл " + items.length + "</b> <span class='muted small'>— проверьте и добавьте</span></p>";
+      items.forEach((it, i) => {
+        const cur = it.slotId ? S.slots[it.slotId] : null;
+        let meta = "";
+        if (it.options.length > 1) {
+          meta += '<select data-i="' + i + '" data-k="slot" aria-label="Семестр и форма">' + it.options.map((id) => '<option value="' + id + '"' + (id === it.slotId ? " selected" : "") + ">" + optLabel(id) + "</option>").join("") + "</select>";
+        } else if (it.slotId) meta += "<span>" + optLabel(it.slotId) + "</span>";
+        if (it.status !== "ok" && it.reason) meta += '<span class="warn">' + esc(it.reason) + "</span>";
+        if (cur != null && cur !== it.value) meta += "<span>сейчас в зачётке: " + cur + "</span>";
+        html += '<div class="pv-row"><input type="checkbox" data-i="' + i + '" data-k="on"' + (it.on ? " checked" : "") + ' aria-label="Добавить">' +
+          '<span class="pv-name">' + esc(it.name) + "</span>" +
+          '<span class="pv-val"><input type="text" inputmode="numeric" maxlength="3" data-i="' + i + '" data-k="val" value="' + (it.value != null ? it.value : "") + '" aria-label="Балл"><span data-pchip="' + i + '">' + chip(it.value) + "</span></span>" +
+          '<div class="pv-meta">' + meta + "</div></div>";
+      });
+    }
+    if (skipped.length) html += '<p class="pv-skip">Пропустил зачёты (не влияют): ' + esc(Array.from(new Set(skipped)).join(", ")) + "</p>";
+    if (orphans.length) html += '<p class="pv-skip">Не понял строки: ' + esc(orphans.slice(0, 6).join(" · ")) + (orphans.length > 6 ? "…" : "") + "</p>";
+    html += '<div class="ctrl"><button class="btn ghost" id="pvCancel">Отмена</button>' + (items.length ? '<button class="btn ml-auto" id="pvApply">Добавить в зачётку</button>' : "") + "</div>";
+    pv.innerHTML = html;
+    updateApply();
+  }
+  function updateApply() {
+    const b = $("#pvApply");
+    if (!b) return;
+    const n = PV.items.filter((x) => x.on && x.slotId && x.value != null).length;
+    b.textContent = n ? "Добавить в зачётку (" + n + ")" : "Добавить в зачётку";
+    b.disabled = !n;
+  }
+  function onPv(e) {
+    const i = e.target.dataset.i, k = e.target.dataset.k;
+    if (i == null || !PV) return;
+    const it = PV.items[+i];
+    if (k === "on") it.on = e.target.checked;
+    if (k === "slot") { it.slotId = e.target.value; it.status = "ok"; }
+    if (k === "val") {
+      const v = parseVal(e.target.value);
+      if (v === undefined) return;
+      it.value = v;
+      if (v != null) { it.on = true; const cb = $('[data-k="on"][data-i="' + i + '"]'); if (cb) cb.checked = true; }
+      $('[data-pchip="' + i + '"]').innerHTML = chip(v);
+    }
+    updateApply();
+  }
+  $("#pv").addEventListener("input", onPv);
+  $("#pv").addEventListener("change", onPv);
+  $("#pv").addEventListener("click", (e) => {
+    if (e.target.id === "pvCancel") { PV = null; renderPreview(); }
+    if (e.target.id === "pvApply") {
+      let n = 0;
+      PV.items.forEach((it) => { if (it.on && it.slotId && it.value != null) { S.slots[it.slotId] = it.value; n++; } });
+      save(); PV = null; renderPreview(); renderBook(); renderSummary();
+      toast("Добавлено: " + n);
+      $("#cover").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    }
+  });
+
+  // ---------- текст ----------
+  $("#txtBtn").addEventListener("click", () => {
+    const text = $("#txt").value;
+    if (!text.trim()) { toast("Вставьте текст с оценками"); return; }
+    const sem = +$("#txtSem").value || null;
+    showPreview([RD.parse(text, { sem, admission: S.settings.admission })]);
+  });
+
+  // ---------- фото ----------
+  let FILES = [];
+  const files = $("#files");
+  function setFiles(list) {
+    FILES = Array.from(list).filter((f) => /^image\//.test(f.type));
+    $("#thumbs").innerHTML = FILES.map((f) => '<img alt="" src="' + URL.createObjectURL(f) + '">').join("");
+    $("#ocrBtn").disabled = !FILES.length;
+  }
+  files.addEventListener("change", () => setFiles(files.files));
+  const drop = $("#drop");
+  ["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("over"); }));
+  ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
+  drop.addEventListener("drop", (e) => setFiles(e.dataTransfer.files));
+  document.addEventListener("paste", (e) => {
+    const imgs = Array.from((e.clipboardData || {}).files || []).filter((f) => /^image\//.test(f.type));
+    if (imgs.length) { setFiles(imgs); toast("Скриншот вставлен"); }
+  });
+
+  let tessP = null, worker = null, curImg = 0, totImg = 1;
+  function loadTesseract() {
+    if (window.Tesseract) return Promise.resolve();
+    if (!tessP) tessP = new Promise((ok, bad) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js";
+      s.onload = ok; s.onerror = () => { tessP = null; bad(new Error("Не загрузилась библиотека распознавания. Проверьте интернет.")); };
+      document.head.appendChild(s);
+    });
+    return tessP;
+  }
+  function prog(msg, p) {
+    $("#ocrProg").hidden = false;
+    $("#ocrMsg").textContent = msg;
+    $("#ocrBar").style.width = Math.round(Math.max(0, Math.min(1, p)) * 100) + "%";
+  }
+  const STAGE = {
+    "loading tesseract core": "Загружаю распознавание",
+    "initializing tesseract": "Запускаю распознавание",
+    "loading language traineddata": "Загружаю русский язык (один раз, ~15 МБ)",
+    "initializing api": "Готовлю",
+    "recognizing text": "Читаю скриншот",
+  };
+  async function getWorker() {
+    if (worker) return worker;
+    await loadTesseract();
+    worker = await Tesseract.createWorker("rus", 1, {
+      logger: (m) => {
+        const base = STAGE[m.status] || m.status;
+        if (m.status === "recognizing text") prog(base + " " + (curImg + 1) + " из " + totImg, (curImg + (m.progress || 0)) / totImg);
+        else prog(base + "…", m.progress || 0);
+      },
+    });
+    return worker;
+  }
+  function prep(file) {
+    return new Promise((ok, bad) => {
+      const img = new Image();
+      img.onload = () => {
+        const k = Math.min(3, Math.max(1, 1800 / img.naturalWidth));
+        const c = document.createElement("canvas");
+        c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+        const g = c.getContext("2d");
+        g.imageSmoothingQuality = "high";
+        g.drawImage(img, 0, 0, c.width, c.height);
+        const d = g.getImageData(0, 0, c.width, c.height), a = d.data;
+        for (let i = 0; i < a.length; i += 4) {
+          let y = 0.299 * a[i] + 0.587 * a[i + 1] + 0.114 * a[i + 2];
+          y = y > 200 ? 255 : y * 1.15 - 20; // светлые плашки → белый, текст темнее
+          y = Math.max(0, Math.min(255, y));
+          a[i] = a[i + 1] = a[i + 2] = y;
+        }
+        g.putImageData(d, 0, 0);
+        ok(c);
+      };
+      img.onerror = () => bad(new Error("Не открылась картинка " + file.name));
+      img.src = URL.createObjectURL(file);
+    });
+  }
+  function wordsOf(data) {
+    if (data.words && data.words.length) return data.words;
+    const out = [];
+    (data.blocks || []).forEach((b) => (b.paragraphs || []).forEach((p) => (p.lines || []).forEach((l) => (l.words || []).forEach((w) => out.push(w)))));
+    return out;
+  }
+  let OCR_TEXTS = [];
+  async function runOCR() {
+    const btn = $("#ocrBtn");
+    btn.disabled = true;
+    OCR_TEXTS = [];
+    totImg = FILES.length;
+    try {
+      prog("Загружаю распознавание…", 0);
+      const w = await getWorker();
+      for (curImg = 0; curImg < FILES.length; curImg++) {
+        prog("Читаю скриншот " + (curImg + 1) + " из " + totImg, curImg / totImg);
+        const canvas = await prep(FILES[curImg]);
+        const { data } = await w.recognize(canvas, {}, { text: true, blocks: true });
+        const words = wordsOf(data);
+        OCR_TEXTS.push(words.length ? RD.wordsToText(words) : data.text || "");
+      }
+      prog("Готово", 1);
+      setTimeout(() => ($("#ocrProg").hidden = true), 800);
+      showOcrTexts();
+      parseOcr();
+    } catch (e) {
+      prog(e && e.message ? e.message : "Не получилось распознать. Попробуйте вкладку «Текст».", 0);
+    } finally {
+      btn.disabled = !FILES.length;
+    }
+  }
+  function showOcrTexts() {
+    $("#ocrRaw").hidden = false;
+    $("#ocrTexts").innerHTML = OCR_TEXTS.map((t, i) => (OCR_TEXTS.length > 1 ? '<p class="small muted" style="margin:10px 0 4px">Скриншот ' + (i + 1) + "</p>" : '<div style="height:8px"></div>') + '<textarea data-ocr="' + i + '">' + esc(t) + "</textarea>").join("");
+  }
+  function parseOcr() {
+    const sem = +$("#imgSem").value || null;
+    const texts = $$("[data-ocr]").map((t) => t.value);
+    showPreview(texts.map((t) => RD.parse(t, { sem, admission: S.settings.admission })));
+  }
+  $("#ocrBtn").addEventListener("click", runOCR);
+  $("#reparse").addEventListener("click", parseOcr);
+
+  // ---------- настройки ----------
+  function syncSettings() {
+    $("#ruleLast").checked = S.settings.rule !== "best";
+    $("#ruleBest").checked = S.settings.rule === "best";
+    $("#th5").value = S.settings.th.five; $("#th4").value = S.settings.th.four; $("#th3").value = S.settings.th.three;
+    $("#adm").value = S.settings.admission;
+  }
+  $$('input[name="rule"]').forEach((r) => r.addEventListener("change", () => { S.settings.rule = r.value; save(); renderSummary(); }));
+  [["#th5", "five"], ["#th4", "four"], ["#th3", "three"]].forEach(([sel, k]) => $(sel).addEventListener("change", (e) => {
+    const v = parseInt(e.target.value, 10);
+    if (v >= 6 && v <= 100) { S.settings.th[k] = v; save(); renderBook(); renderSummary(); } else e.target.value = S.settings.th[k];
+  }));
+  $("#adm").addEventListener("change", (e) => {
+    const v = parseInt(e.target.value, 10);
+    if (v >= 2015 && v <= 2035) { S.settings.admission = v; save(); fillSemSelect($("#imgSem")); fillSemSelect($("#txtSem")); renderBook(); }
+    else e.target.value = S.settings.admission;
+  });
+  $("#resetBtn").addEventListener("click", () => {
+    if (!confirm("Стереть все оценки из этого браузера?")) return;
+    S.slots = {}; save(); renderBook(); renderSummary(); toast("Оценки стёрты");
+  });
+  $("#exportBtn").addEventListener("click", async () => {
+    const FW = { exam: "экзамен", kr: "курсовая", dz: "зачет с оценкой", prac: "зачет с оценкой", vkr: "" };
+    let out = [];
+    for (let sem = 1; sem <= 8; sem++) {
+      const rows = RD.SLOTS.filter((s) => s.sem === sem && S.slots[s.id] != null);
+      if (!rows.length) continue;
+      out.push(sem + " семестр");
+      rows.forEach((s) => out.push((s.key === "vkr" ? "ВКР" : s.name) + (FW[s.form] ? " " + FW[s.form] : "") + " " + S.slots[s.id]));
+    }
+    const text = out.join("\n");
+    if (!text) { toast("Пока нечего копировать"); return; }
+    try { await navigator.clipboard.writeText(text); toast("Скопировано"); }
+    catch (e) { $("#txt").value = text; $$(".tabs button")[1].click(); toast("Текст во вкладке «Текст» — скопируйте оттуда"); $("#importBlock").scrollIntoView(); }
+  });
+
+  // ---------- старт ----------
+  fillSemSelect($("#imgSem")); fillSemSelect($("#txtSem"));
+  syncSettings(); renderBook(); renderSummary();
+})();
+</script>
+</body>
+</html>
